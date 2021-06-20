@@ -1,0 +1,8 @@
+<ng-container *ngIf="!mangGhe.TrangThai;else gheDaDuocChonRoi">
+    <button class="btn btn-secondary mx-2 my-2 text-center" [ngClass]="{'btn-success': status}"
+        (click)="handleTrangThai()">{{mangGhe.SoGhe}}</button>
+</ng-container>
+
+<ng-template #gheDaDuocChonRoi>
+    <button class="btn btn-danger" disabled> {{mangGhe.SoGhe}}</button>
+</ng-template>

@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="text-center mb-5 text-warning">ĐẶT VÉ XE BUS HÃNG CYBERSOFT</h1>
+    <div class="row mb-5">
+        <div class="col-md-6 text-center">
+            <p class="bg-secondary text-white py-3">TÀI XẾ</p>
+            <ng-container *ngFor="let item of mangGhe; let index = index">
+                <app-ghe [mangGhe]="item" (eventChon)="chairBooked($event, item)"></app-ghe>
+                <br *ngIf="(index+1)%4===0">
+            </ng-container>
+        </div>
+        <div class="col-md-6">
+            <h2>Danh sách ghế đã đặt ({{danhSachGheDaDat}})</h2>
+            <p *ngFor="let ghe of gheDuocChon">Ghế: {{ghe.TenGhe}}, Giá: ${{ghe.Gia}} </p>
+
+        </div>
+        <p>Tổng tiền: ${{tongTien}} </p>
+    </div>
+
+</div>
